@@ -48,6 +48,10 @@ export class UserService {
             where: { id: user_id },
         });
 
+        if (!user) {
+            throw new Error(`User with id ${user_id} not found`);
+        }
+
         // Quick check to see if the product is already in the order, if so, spare a db call
         if (user.order.find((product) => product.id === product_id)) {
             return user;
