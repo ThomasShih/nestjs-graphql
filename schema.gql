@@ -8,15 +8,31 @@ type Product {
   price: Float!
 }
 
+type User {
+  id: String!
+  name: String!
+  email: String!
+  age: Float!
+  order: [Product!]
+}
+
 type Query {
   getProducts: [Product!]!
+  getUsers: [User!]!
 }
 
 type Mutation {
   createProduct(productInput: ProductInput!): Product!
+  createUser(userInput: UserInput!, orderItemIds: [String!]!): User!
 }
 
 input ProductInput {
   name: String!
   price: Float!
+}
+
+input UserInput {
+  name: String!
+  email: String!
+  age: Float!
 }
