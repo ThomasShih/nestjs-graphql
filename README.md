@@ -36,3 +36,5 @@ $ npm run test:cov
 
 ## TODOs:
 - Figure out a way to make the class validator rejections return a semantic error response
+- Create unit-tests for the various services
+

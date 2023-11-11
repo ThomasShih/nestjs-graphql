@@ -4,7 +4,7 @@ import { User } from './user.entity';
 import { Repository } from 'typeorm';
 import { UserInput } from './dto/create-user.input';
 import { v4 as uuidv4 } from 'uuid';
-import { Product } from 'src/product/product.entity';
+import { Product } from '../product/product.entity';
 
 @Injectable()
 export class UserService {
