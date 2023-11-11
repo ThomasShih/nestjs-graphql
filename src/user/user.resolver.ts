@@ -23,4 +23,13 @@ export class UserResolver {
         // console.log("orderItemIds", orderItemIds)
         return this.userService.createUser(userInput);
     }
+
+    @Mutation((returns) => User)
+    @UsePipes(new ValidationPipe())
+    addProductToOrder(
+        @Args('user_id') user_id: string,
+        @Args('product_id') product_id: string,
+    ): Promise<User> {
+        return this.userService.addProductToOrder(user_id, product_id);
+    }
 }

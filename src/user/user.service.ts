@@ -41,4 +41,24 @@ export class UserService {
 
         return this.UserRepository.save(user);
     }
+
+    async addProductToOrder(user_id: string, product_id: string): Promise<User> {
+        const user = await this.UserRepository.findOne({
+            relations: ["order"],
+            where: { id: user_id },
+        });
+
+        // Quick check to see if the product is already in the order, if so, spare a db call
+        if (user.order.find((product) => product.id === product_id)) {
+            return user;
+        }
+
+        const product = await this.ProductRepository.findOne({
+            where: { id: product_id }
+        });
+
+        user.order.push(product);
+
+        return this.UserRepository.save(user);
+    }
 }

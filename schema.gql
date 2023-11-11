@@ -24,6 +24,7 @@ type Query {
 type Mutation {
   createProduct(productInput: ProductInput!): Product!
   createUser(userInput: UserInput!): User!
+  addProductToOrder(user_id: String!, product_id: String!): User!
 }
 
 input ProductInput {
