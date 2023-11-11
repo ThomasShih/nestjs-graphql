@@ -6,22 +6,22 @@ import { Product } from 'src/product/product.entity';
 @ObjectType()
 export class User {
     @PrimaryGeneratedColumn('uuid')
-    @Field()
+    @Field(() => String, { description: "The unique uuid of the user" })
     id: string;
 
     @Column()
-    @Field()
+    @Field(() => String, { description: "The name of the user" })
     name: string;
 
     @Column()
-    @Field()
+    @Field(() => String, { description: "The email of the user" })
     email: string;
 
     @Column("int")
-    @Field()
+    @Field(() => Number, { description: "The age of the user" })
     age: number;
 
-    @Field((type) => [Product], { defaultValue: [] })
+    @Field((type) => [Product], { defaultValue: [], description: "The list of products the user has ordered" })
     @ManyToMany((type) => Product, product => product.id)
     @JoinTable()
     order: Product[];

@@ -18,9 +18,7 @@ export class UserResolver {
     @UsePipes(new ValidationPipe())
     createUser(
         @Args('userInput') userInput: UserInput,
-        // @Args('orderItemIds', { type: () => [String] }) orderItemIds: string[],
     ): Promise<User> {
-        // console.log("orderItemIds", orderItemIds)
         return this.userService.createUser(userInput);
     }
 

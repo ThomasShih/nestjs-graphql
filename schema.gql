@@ -2,17 +2,34 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+"""
+The Product model repersents a unique product for order, with a specified price.
+"""
 type Product {
+  """The unique uuid of the product"""
   id: String!
+
+  """The name of the product"""
   name: String!
+
+  """The price of the product, max two decimal places."""
   price: Float!
 }
 
 type User {
+  """The unique uuid of the user"""
   id: String!
+
+  """The name of the user"""
   name: String!
+
+  """The email of the user"""
   email: String!
+
+  """The age of the user"""
   age: Float!
+
+  """The list of products the user has ordered"""
   order: [Product!]!
 }
 
@@ -28,13 +45,23 @@ type Mutation {
 }
 
 input ProductInput {
+  """The name of the product"""
   name: String!
+
+  """The price of the product, max two decimal places."""
   price: Float!
 }
 
 input UserInput {
+  """The name of the user"""
   name: String!
+
+  """The email of the user"""
   email: String!
+
+  """The age of the user"""
   age: Float!
+
+  """The list of products the user has ordered"""
   order: [String!]!
 }
