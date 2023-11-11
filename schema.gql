@@ -2,26 +2,21 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Blog {
-  id: Int!
-  title: String!
-  body: String!
-  author: String!
-  date: String!
+type Product {
+  id: String!
+  name: String!
+  price: Float!
 }
 
 type Query {
-  getAllBlogs: [Blog!]!
+  getProducts: [Product!]!
 }
 
 type Mutation {
-  createBlog(blogInput: BlogInput!): Blog!
+  createProduct(productInput: ProductInput!): Product!
 }
 
-input BlogInput {
-  id: Float!
-  title: String!
-  body: String!
-  author: String!
-  date: String!
+input ProductInput {
+  name: String!
+  price: Float!
 }

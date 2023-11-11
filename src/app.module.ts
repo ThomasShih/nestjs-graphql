@@ -3,9 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BlogModule } from './blog/blog.module';
-import { BlogResolver } from './blog/blog.resolver';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -20,7 +19,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    BlogModule,
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
