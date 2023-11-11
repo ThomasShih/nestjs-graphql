@@ -13,10 +13,20 @@ import { UserModule } from './user/user.module';
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql'
     }),
+    // TypeOrmModule.forRoot({
+    //   type: 'sqlite',
+    //   database: ':memory:',
+    //   // dist should only contain compiled files, therefore .js files, but not .ts files
+    //   entities: ['dist/**/*.entity{.ts,.js}'],
+    //   synchronize: true,
+    // }),
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: ':memory:',
-      // dist should only contain compiled files, therefore .js files, but not .ts files
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'postgres',
+      database: 'postgres',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

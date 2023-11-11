@@ -16,6 +16,6 @@ export class UserInput {
     @IsNumber({ maxDecimalPlaces: 0 })
     age: number;
 
-    @Field(() => [Product], { defaultValue: [] })
-    order: Product[];
+    @Field(type => [String])
+    order: string[];
 }

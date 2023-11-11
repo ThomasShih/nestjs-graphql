@@ -13,7 +13,7 @@ type User {
   name: String!
   email: String!
   age: Float!
-  order: [Product!]
+  order: [Product!]!
 }
 
 type Query {
@@ -23,7 +23,7 @@ type Query {
 
 type Mutation {
   createProduct(productInput: ProductInput!): Product!
-  createUser(userInput: UserInput!, orderItemIds: [String!]!): User!
+  createUser(userInput: UserInput!): User!
 }
 
 input ProductInput {
@@ -35,4 +35,5 @@ input UserInput {
   name: String!
   email: String!
   age: Float!
+  order: [String!]!
 }
