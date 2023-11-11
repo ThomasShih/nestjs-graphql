@@ -60,7 +60,7 @@ input UserInput {
   email: String!
 
   """The age of the user"""
-  age: Float!
+  age: Int!
 
   """The list of products the user has ordered"""
   order: [String!]!

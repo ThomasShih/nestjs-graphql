@@ -1,6 +1,5 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, InputType, Int } from '@nestjs/graphql';
 import { IsEmail, IsNumber, IsPositive } from '@nestjs/class-validator';
-import { Product } from 'src/product/product.entity';
 
 @InputType()
 export class UserInput {
@@ -11,7 +10,7 @@ export class UserInput {
     @IsEmail()
     email: string;
 
-    @Field(() => Number, { description: "The age of the user" })
+    @Field(() => Int, { description: "The age of the user" })
     @IsPositive()
     @IsNumber({ maxDecimalPlaces: 0 })
     age: number;
