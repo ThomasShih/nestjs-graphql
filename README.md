@@ -1,4 +1,7 @@
 ## Overview:
+
+Simply `docker-compose up`
+
 ![Products Page](./guide_images/products_page.png)
 ![New Product](./guide_images/add_new_product.png)
 ![Users Page](./guide_images/users_page.png)
