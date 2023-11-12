@@ -32,6 +32,7 @@
     - backend docker file should build a production-ready version of the server instead of its only current purpose to package up BE
 ### Backend
 - Unit tests should be implemented for the BE, currently its just a barebones "Hey does it exist"
+- Full-on CRUD should be implemented.
 ### Frontend
 - The cache invalidation for every time a new product/user is created seems very inefficient, I should use the return output from the actual mutations to change state data.
 - Responsive design, actual UIUX, etc.
