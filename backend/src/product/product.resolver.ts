@@ -3,7 +3,7 @@ import { Product } from './product.entity';
 import { ProductService } from './product.service';
 import { ProductInput } from './dto/create-product.input';
 import { Args, Mutation, Query } from '@nestjs/graphql';
-import { UsePipes, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, UsePipes, ValidationError, ValidationPipe } from '@nestjs/common';
 
 @Resolver((of) => Product)
 export class ProductResolver {
