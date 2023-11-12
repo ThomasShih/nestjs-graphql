@@ -25,9 +25,9 @@ export class UserResolver {
     @Mutation((returns) => User)
     @UsePipes(new ValidationPipe())
     addProductToOrder(
-        @Args('user_id') user_id: string,
-        @Args('product_id') product_id: string,
+        @Args('userId') userId: string,
+        @Args('productId') productId: string,
     ): Promise<User> {
-        return this.userService.addProductToOrder(user_id, product_id);
+        return this.userService.addProductToOrder(userId, productId);
     }
 }
