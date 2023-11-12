@@ -5,6 +5,7 @@
 ![New User](./guide_images/add_new_user.png)
 ![Add Product to User](./guide_images/add_product_to_user.png)
 
+![DB ER Diagram](./guide_images/db_er_diagram.png)
 ### [GraphQL schema ](./backend/schema.gql)
 
 ## Design justifications:
@@ -13,7 +14,7 @@
 
 ### Backend/Database
 - I decided that it makes sense such that multiple users can order the same product on a web page, that it should be a many-to-many relationship, (ie use an associations table)
-    - If this is to be designed further, we would likely create a product version and such an associations table would work through a `product - product version - invoice - user relationship`
+    - If this is to be designed further, we would likely create a product version and such an associations table would work through a `product - product version - invoice - user` relationship
 - Instead of using in-memory SQLite, I decided to use a docker image of Postgres for the following reasons:
     - I cannot connect to an in-memory SQLite to verify the relationship structure
     - A docker image of Postgres would also mean persistent data across various instances of code

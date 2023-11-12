@@ -34,13 +34,21 @@ type User {
 }
 
 type Query {
+  """Get all products"""
   getProducts: [Product!]!
+
+  """Get all users"""
   getUsers: [User!]!
 }
 
 type Mutation {
+  """Create new product"""
   createProduct(productInput: ProductInput!): Product!
+
+  """Create new user"""
   createUser(userInput: UserInput!): User!
+
+  """Add product to the order of an existing user"""
   addProductToOrder(userId: String!, productId: String!): User!
 }
 

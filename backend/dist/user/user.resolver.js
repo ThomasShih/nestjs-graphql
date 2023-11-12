@@ -35,13 +35,17 @@ let UserResolver = class UserResolver {
 };
 exports.UserResolver = UserResolver;
 __decorate([
-    (0, graphql_2.Query)((type) => [user_entity_1.User]),
+    (0, graphql_2.Query)((type) => [user_entity_1.User], {
+        description: 'Get all users'
+    }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserResolver.prototype, "getUsers", null);
 __decorate([
-    (0, graphql_2.Mutation)((returns) => user_entity_1.User),
+    (0, graphql_2.Mutation)((returns) => user_entity_1.User, {
+        description: 'Create new user'
+    }),
     (0, common_1.UsePipes)(new common_1.ValidationPipe()),
     __param(0, (0, graphql_2.Args)('userInput')),
     __metadata("design:type", Function),
@@ -49,7 +53,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserResolver.prototype, "createUser", null);
 __decorate([
-    (0, graphql_2.Mutation)((returns) => user_entity_1.User),
+    (0, graphql_2.Mutation)((returns) => user_entity_1.User, {
+        description: 'Add product to the order of an existing user'
+    }),
     (0, common_1.UsePipes)(new common_1.ValidationPipe()),
     __param(0, (0, graphql_2.Args)('userId')),
     __param(1, (0, graphql_2.Args)('productId')),

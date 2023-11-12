@@ -9,12 +9,16 @@ import { UsePipes, ValidationPipe } from '@nestjs/common';
 export class ProductResolver {
     constructor(private productService: ProductService) { }
 
-    @Query((type) => [Product])
+    @Query((type) => [Product], {
+        description: 'Get all products',
+    })
     async getProducts() {
         return this.productService.getAll();
     }
 
-    @Mutation((returns) => Product)
+    @Mutation((returns) => Product, {
+        description: 'Create new product',
+    })
     @UsePipes(new ValidationPipe())
     createProduct(@Args('productInput') productInput: ProductInput): Promise<Product> {
         return this.productService.createProduct(productInput);

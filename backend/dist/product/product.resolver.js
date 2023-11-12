@@ -32,13 +32,17 @@ let ProductResolver = class ProductResolver {
 };
 exports.ProductResolver = ProductResolver;
 __decorate([
-    (0, graphql_2.Query)((type) => [product_entity_1.Product]),
+    (0, graphql_2.Query)((type) => [product_entity_1.Product], {
+        description: 'Get all products',
+    }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ProductResolver.prototype, "getProducts", null);
 __decorate([
-    (0, graphql_2.Mutation)((returns) => product_entity_1.Product),
+    (0, graphql_2.Mutation)((returns) => product_entity_1.Product, {
+        description: 'Create new product',
+    }),
     (0, common_1.UsePipes)(new common_1.ValidationPipe()),
     __param(0, (0, graphql_2.Args)('productInput')),
     __metadata("design:type", Function),

@@ -9,12 +9,16 @@ import { UsePipes, ValidationPipe } from '@nestjs/common';
 export class UserResolver {
     constructor(private userService: UserService) { }
 
-    @Query((type) => [User])
+    @Query((type) => [User], {
+        description: 'Get all users'
+    })
     async getUsers() {
         return this.userService.getAll();
     }
 
-    @Mutation((returns) => User)
+    @Mutation((returns) => User, {
+        description: 'Create new user'
+    })
     @UsePipes(new ValidationPipe())
     createUser(
         @Args('userInput') userInput: UserInput,
@@ -22,7 +26,9 @@ export class UserResolver {
         return this.userService.createUser(userInput);
     }
 
-    @Mutation((returns) => User)
+    @Mutation((returns) => User, {
+        description: 'Add product to the order of an existing user'
+    })
     @UsePipes(new ValidationPipe())
     addProductToOrder(
         @Args('userId') userId: string,
