@@ -40,6 +40,7 @@ Simply `docker-compose up`
 - The cache invalidation for every time a new product/user is created seems very inefficient, I should use the return output from the actual mutations to change state data.
 - Responsive design, actual UIUX, etc.
 - Use typescript, this should help with enforcing prop types, etc.
+- When using the add product to user form, I should filter out products the user already has in the order.
 ### Database
 - The production database definitely should be more, "stable". For example, it should be an RDS instance of a dev db, where local development is connected via an SSH proxy jump server.
 - Alembic migrations (or a js equivalent) should be used to administer the database instead of doing the `synchronize: true` which is very dangerous in a production environment.
