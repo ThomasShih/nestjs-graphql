@@ -52,3 +52,7 @@ Simply `docker-compose up`
     - I believe improvements can also be made on the official nestjs graphql starter guide on how resolvers should be set up.
 - I believe that the Doug Martin Github nestjs-query documentation should be removed/updated from the assignment, it's no longer compatible with the newest versions of nestjs and is a stale repo.
 - I would love to provide good, semantic, and descriptive error messages upon validation errors from the validation pipes of mutations, however I haven't been able to find documentation on how to do that.
+
+
+## Some system design notes:
+https://whimsical.com/plotly-tech-assessment-system-design-UygUwK9W6XFbsDPadC9MGz
